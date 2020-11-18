@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="css/app.css">
+        <meta charset="utf-8" name="viewport" content="width=device-width">
+
+        <noscript>
+        	    Please enable Javascript
+        </noscript>
+    </head>
+    <body class="col" onload="loadLine();">
+        <div style="height: 5%;">
+            <center style="height: 100%;">
+                <h1>Text Editor</h1>
+            </center>
+        </div> 
+        <div style="height: 4%;display: flex;justify-content: center;">
+            <div style="height: 100%;">
+                mail:<button onclick="window.open('mailto:texteditorcreator@outlook.com');">texteditorcreator@outlook.com</button>          
+                <button rows="1" cols="4" onclick="moveText('redo');">redo</button>
+                <button rows="1" cols="4" onclick="moveText('undo');">undo</button>
+            </div>
+        </div>
+        <br>
+        <div style="height: 50%;display: flex;justify-content: center;">
+            <textarea readonly style="float: left;border-style: dotted;" cols="4" id="leftNumber"></textarea>           
+            <textarea style="float: left;Width: 90%;;border-style: dotted;" id="editor" wrap="off" oninput="ref();"></textarea>
+        </div>
+        <br>
+        <div style="height: 4%;display: flex;justify-content: center;">
+            <div style="height: 100%;">
+                <button onclick="manualMove_1();" rows="1">How to warp position</button>
+                <button onclick="manualMove_2();" rows="1">How to warp line</button>
+            </div>
+        </div>
+        <br>
+        <div style="height: 4%;display: flex;justify-content: center;">
+            <div style="height: 100%;">
+                <textarea style="float: left" id="position" rows="1" cols="20"></textarea>
+                <textarea readonly style="float: left" rows="1" cols="4" onclick="movePosition()">move</textarea>
+                <textarea readonly style="float: left" id="status" rows="1" cols="20"></textarea>
+            </div>
+        </div>
+        <br>
+        <div style="height: 4%;display: flex;justify-content: center;">
+            <div style="height: 100%;">
+                <textarea rows="1" cols="15" oninput ="getNumberTabs();" id="numberTabs" rows="1">tab sizes:4;</textarea>
+                
+            </div>
+        </div>
+        <br>
+        <div style="height: 4%;display: flex;justify-content: center;">
+            <div style="height: 100%;">
+                <textarea rows="1" id="filename">change me.txt</textarea>
+                <textarea readonly rows="1" onclick="save()">click me to save</textarea>
+            </div>
+        </div>
+        <br>
+        <center>
+            <input type="file" id="file">
+        </center>
+        <script src="src/Basis.js"></script>
+        <script src="src/Line.js"></script>
+        <script src="src/encoding.js"><//https://polygon-planet-log.blogspot.com/2012/04/javascript.html</script>
+        <script>var loc = ["editor", "leftNumber", "status", "position", "numberTabs", "filename", "file"];</script>
+        <script src="src/App.js"></script>
+    </body>
+</html>
